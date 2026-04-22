@@ -1,0 +1,19 @@
+services:
+  dev:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    env_file:
+      - .env
+    volumes:
+      - ../:/workspace:cached
+      - target-cache:/workspace/target
+      - cargo-git-cache:/usr/local/cargo/git
+      - cargo-registry-cache:/usr/local/cargo/registry
+    working_dir: /workspace
+    command: sleep infinity
+
+volumes:
+  target-cache:
+  cargo-git-cache:
+  cargo-registry-cache:
