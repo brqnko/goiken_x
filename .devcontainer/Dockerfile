@@ -1,4 +1,4 @@
-FROM rust:1.97.1-slim-bookworm
+FROM rust:1.98.0-slim-bookworm
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
       pkg-config \
